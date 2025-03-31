@@ -1,59 +1,57 @@
-/* Общие стили */
+/* Общие настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
 header {
-  background-color: #333;
+  background-color: #4CAF50;
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 h1 {
+  font-size: 2rem;
   margin: 0;
 }
 
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-/* Основные стили формы */
+/* Основной контент */
 main {
   max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 20px auto;
   background-color: white;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Стиль для формы */
 form {
-  display: grid;
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin: 10px 0 5px;
 }
 
 input, select, textarea {
-  width: 100%;
+  font-size: 1rem;
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 input[type="file"] {
@@ -61,17 +59,17 @@ input[type="file"] {
 }
 
 textarea {
-  height: 150px;
   resize: vertical;
+  min-height: 100px;
 }
 
 button {
   padding: 15px;
-  font-size: 16px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -80,57 +78,43 @@ button:hover {
   background-color: #45a049;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #4CAF50;
-  outline: none;
-}
-
-button[type="submit"] {
-  width: 100%;
-}
-
-/* Стили для поля с маркой автомобиля */
-select, input[list] {
-  width: 100%;
-}
-
-select option, input[list] option {
-  font-size: 16px;
-}
-
-/* Стили для поля с фотографиями */
-input[type="file"] {
-  padding: 5px;
-}
-
-textarea {
-  height: 150px;
-  resize: vertical;
-}
-
-/* Стиль для сообщения благодарности */
+/* Стиль для благодарственного сообщения */
 #thank-you-message {
-  font-size: 18px;
-  color: #333;
-  padding: 20px;
-  background-color: #e7f7e7;
-  border: 1px solid #d1e8d0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-top: 20px;
-  display: none;
+  font-size: 1.2rem;
 }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
+#thank-you-message h2 {
+  color: #4CAF50;
+}
+
+#thank-you-message p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
   main {
     padding: 15px;
-    margin: 20px;
   }
-  
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input, select, textarea {
+    font-size: 0.9rem;
+  }
+
   button {
-    font-size: 14px;
-    padding: 12px;
+    font-size: 1rem;
   }
 }
