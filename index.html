@@ -11,7 +11,10 @@
     <h1>Strona do skupu samochodów</h1>
   </header>
   <main>
-    <form id="car-form" action="https://example.com/submit" method="POST" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
+    <form id="car-form" action="https://formsubmit.co/autkoryzowa@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
       <label for="car-brand">Marka samochodu (jeżeli twojej marki niema wybierz "NIEMA"):</label>
       <select id="car-brand" name="car-brand" required>
         <option value="" disabled selected>Wybierz markę</option>
