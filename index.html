@@ -7,103 +7,138 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Strona do skupu samochodów</h1>
-  </header>
-  <main>
-    <form id="car-form">
-      <label for="car-brand">Marka samochodu (jeżeli twojej marki niema wybierz "NIEMA"):</label>
-      <select id="car-brand" name="car-brand" required>
-        <option value="" disabled selected>Wybierz markę</option>
-        <option value="Alfa Romeo">Alfa Romeo</option>
-        <option value="Audi">Audi</option>
-        <option value="BMW">BMW</option>
-        <option value="Chevrolet">Chevrolet</option>
-        <option value="Chrysler">Chrysler</option>
-        <option value="Citroen">Citroen</option>
-        <option value="Dacia">Dacia</option>
-        <option value="Fiat">Fiat</option>
-        <option value="Ford">Ford</option>
-        <option value="Honda">Honda</option>
-        <option value="Hyundai">Hyundai</option>
-        <option value="Jeep">Jeep</option>
-        <option value="Kia">Kia</option>
-        <option value="Land Rover">Land Rover</option>
-        <option value="Lancia">Lancia</option>
-        <option value="Lexus">Lexus</option>
-        <option value="Mazda">Mazda</option>
-        <option value="Mercedes">Mercedes</option>
-        <option value="Mitsubishi">Mitsubishi</option>
-        <option value="Nissan">Nissan</option>
-        <option value="Opel">Opel</option>
-        <option value="Peugeot">Peugeot</option>
-        <option value="Porsche">Porsche</option>
-        <option value="Renault">Renault</option>
-        <option value="Seat">Seat</option>
-        <option value="Skoda">Skoda</option>
-        <option value="Subaru">Subaru</option>
-        <option value="Suzuki">Suzuki</option>
-        <option value="Tesla">Tesla</option>
-        <option value="Toyota">Toyota</option>
-        <option value="Volkswagen">Volkswagen</option>
-        <option value="Volvo">Volvo</option>
-        <option value="NIEMA">NIEMA</option>
-      </select>
+  <div class="container">
+    <header>
+      <h1>Skup samochodów</h1>
+      <p class="subtitle">Wypełnij formularz, aby otrzymać ofertę</p>
+    </header>
+    
+    <main>
+      <form id="car-form">
+        <div class="form-group">
+          <label for="car-brand">Marka samochodu:</label>
+          <select id="car-brand" name="car-brand" required>
+            <option value="" disabled selected>Wybierz markę</option>
+            <option value="Alfa Romeo">Alfa Romeo</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Citroen">Citroen</option>
+            <option value="Dacia">Dacia</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Ford">Ford</option>
+            <option value="Honda">Honda</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Kia">Kia</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Lancia">Lancia</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Opel">Opel</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Renault">Renault</option>
+            <option value="Seat">Seat</option>
+            <option value="Skoda">Skoda</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Volvo">Volvo</option>
+            <option value="NIEMA">Inna (napisz w opisie)</option>
+          </select>
+        </div>
 
-      <label for="car-model">Model samochodu:</label>
-      <input type="text" id="car-model" name="car-model" required>
+        <div class="form-group">
+          <label for="car-model">Model:</label>
+          <input type="text" id="car-model" name="car-model" required>
+        </div>
 
-      <label for="year">Rok produkcji:</label>
-      <input type="number" id="year" name="year" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="year">Rok produkcji:</label>
+            <input type="number" id="year" name="year" min="1950" max="2024" required>
+          </div>
+          <div class="form-group">
+            <label for="mileage">Przebieg (km):</label>
+            <input type="number" id="mileage" name="mileage" required>
+          </div>
+        </div>
 
-      <label for="mileage">Przebieg:</label>
-      <input type="text" id="mileage" name="mileage" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fuel">Paliwo:</label>
+            <select id="fuel" name="fuel" required>
+              <option value="diesel">Diesel</option>
+              <option value="petrol">Benzyna</option>
+              <option value="gaspetrol">Gaz+Benzyna</option>
+              <option value="hybrid">Hybryda</option>
+              <option value="electric">Elektryczny</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="transmission">Skrzynia biegów:</label>
+            <select id="transmission" name="transmission" required>
+              <option value="manual">Manualna</option>
+              <option value="automatic">Automatyczna</option>
+              <option value="cvt">CVT</option>
+            </select>
+          </div>
+        </div>
 
-      <label for="fuel">Rodzaj paliwa:</label>
-      <select id="fuel" name="fuel" required>
-        <option value="diesel">Diesel</option>
-        <option value="petrol">Benzyna</option>
-        <option value="gaspetrol">Gaz+Benzyna</option>
-        <option value="hybrid">Hybryda</option>
-        <option value="electric">Elektryczny</option>
-      </select>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="body-condition">Stan nadwozia (0-5):</label>
+            <input type="number" id="body-condition" name="body-condition" min="0" max="5" required>
+          </div>
+          <div class="form-group">
+            <label for="technical-condition">Stan techniczny (0-5):</label>
+            <input type="number" id="technical-condition" name="technical-condition" min="0" max="5" required>
+          </div>
+        </div>
 
-      <label for="body-condition">Stan nadwozia (0-5):</label>
-      <input type="number" id="body-condition" name="body-condition" min="0" max="5" required>
+        <div class="form-group">
+          <label for="price">Cena (zł):</label>
+          <input type="number" id="price" name="price" required>
+        </div>
 
-      <label for="technical-condition">Stan techniczny (0-5):</label>
-      <input type="number" id="technical-condition" name="technical-condition" min="0" max="5" required>
+        <div class="form-group">
+          <label for="description">Opis:</label>
+          <textarea id="description" name="description" placeholder="Dodatkowe informacje o stanie samochodu" required></textarea>
+        </div>
 
-      <label for="transmission">Rodzaj skrzyni biegów:</label>
-      <select id="transmission" name="transmission" required>
-        <option value="manual">Manualna</option>
-        <option value="automatic">Automatyczna</option>
-        <option value="cvt">CVT</option>
-      </select>
+        <div class="form-group">
+          <label for="car-photo">Zdjęcia (max 9):</label>
+          <input type="file" id="car-photo" name="car-photo" accept="image/*" multiple required>
+        </div>
 
-      <label for="description">Krótki opis:</label>
-      <textarea id="description" name="description" placeholder="Napisz krótki opis samochódu np. co do zrobienia, szczegóły stanu, dod. elementy" required></textarea>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name">Imię:</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" pattern="(\+48\s?)?\d{3}[\s\-]?\d{3}[\s\-]?\d{3}" placeholder="+48 123 456 789" required>
+          </div>
+        </div>
 
-      <label for="car-photo">Dodaj zdjęcia (do 9):</label>
-      <input type="file" id="car-photo" name="car-photo" accept="image/*" multiple required>
+        <button type="submit" class="submit-btn">Wyślij ofertę</button>
+      </form>
 
-      <label for="price">Cena:</label>
-      <input type="number" id="price" name="price" required>
-
-      <label for="contact-name">Imię:</label>
-      <input type="text" id="contact-name" name="contact-name" required>
-
-      <label for="phone">Numer telefonu:</label>
-      <input type="tel" id="phone" name="phone" pattern="(\+48\s?)?\d{3}[\s\-]?\d{3}[\s\-]?\d{3}|\+380\s?\d{2}[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" placeholder="Przykład: +48 123 456 789 lub +380 12 345 67 89" required>
-
-      <button type="submit">Wyślij</button>
-    </form>
-
-    <div id="thank-you-message">
-      <h2>Dziękujemy!</h2>
-      <p>Jeśli Twój samochód nam się spodoba, skontaktujemy się z Tobą wkrótce!</p>
-    </div>
-  </main>
+      <div id="thank-you-message">
+        <div class="success-icon">✓</div>
+        <h2>Dziękujemy!</h2>
+        <p>Twoja oferta została wysłana. Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+      </div>
+    </main>
+  </div>
 
   <script>
     document.getElementById('car-form').addEventListener('submit', async function(event) {
@@ -112,56 +147,57 @@
       const botToken = "8079391731:AAESPUGNq_qYJ1sFbhidzo8vRD9c5hydets";
       const chatId = "-1002536252900";
       
-      // Собираем все данные формы
-      const formData = {
+      // Collect form data
+      const formValues = {
         brand: document.getElementById('car-brand').value,
         model: document.getElementById('car-model').value,
         year: document.getElementById('year').value,
-        mileage: document.getElementById('mileage').value,
-        fuel: document.getElementById('fuel').value,
-        bodyCondition: document.getElementById('body-condition').value,
-        techCondition: document.getElementById('technical-condition').value,
-        transmission: document.getElementById('transmission').value,
-        description: document.getElementById('description').value,
-        price: document.getElementById('price').value,
+        mileage: document.getElementById('mileage').value + ' km',
+        fuel: document.getElementById('fuel').options[document.getElementById('fuel').selectedIndex].text,
+        body: document.getElementById('body-condition').value + '/5',
+        tech: document.getElementById('technical-condition').value + '/5',
+        transmission: document.getElementById('transmission').options[document.getElementById('transmission').selectedIndex].text,
+        price: document.getElementById('price').value + ' zł',
         name: document.getElementById('contact-name').value,
-        phone: document.getElementById('phone').value
+        phone: document.getElementById('phone').value,
+        desc: document.getElementById('description').value
       };
 
-      // Формируем текст сообщения
-      const text = `🚗 *Nowa oferta samochodu* 🚗
-      \n*Marka:* ${formData.brand}
-      \n*Model:* ${formData.model}
-      \n*Rok:* ${formData.year}
-      \n*Przebieg:* ${formData.mileage} km
-      \n*Paliwo:* ${formData.fuel}
-      \n*Stan nadwozia:* ${formData.bodyCondition}/5
-      \n*Stan techniczny:* ${formData.techCondition}/5
-      \n*Skrzynia biegów:* ${formData.transmission}
-      \n*Cena:* ${formData.price} zł
-      \n*Imię:* ${formData.name}
-      \n*Telefon:* ${formData.phone}
-      \n\n*Opis:* ${formData.description}`;
+      // Format message
+      const text = `🚗 *NOWA OFERTA SAMOCHODU* 🚗
+      \n*Marka:* ${formValues.brand}
+      \n*Model:* ${formValues.model}
+      \n*Rok:* ${formValues.year}
+      \n*Przebieg:* ${formValues.mileage}
+      \n*Paliwo:* ${formValues.fuel}
+      \n*Skrzynia:* ${formValues.transmission}
+      \n*Stan nadwozia:* ${formValues.body}
+      \n*Stan techniczny:* ${formValues.tech}
+      \n*Cena:* ${formValues.price}
+      \n\n*Kontakt:*
+      \n*Imię:* ${formValues.name}
+      \n*Tel:* ${formValues.phone}
+      \n\n*Opis:*
+      ${formValues.desc}`;
 
-      // Получаем файлы (ограничиваем до 9)
-      const files = Array.from(document.getElementById('car-photo').files).slice(0, 9);
-      
       try {
+        const files = Array.from(document.getElementById('car-photo').files).slice(0, 9);
+        
         if (files.length > 0) {
-          // Если есть фото - отправляем как альбом с текстом
-          const mediaGroup = files.map((file, index) => ({
+          // Send as media group if photos exist
+          const media = files.map((file, i) => ({
             type: 'photo',
-            media: `attach://photo_${index}`,
-            caption: index === 0 ? text : undefined,
+            media: `attach://photo${i}`,
+            caption: i === 0 ? text : '',
             parse_mode: 'Markdown'
           }));
 
           const formData = new FormData();
           formData.append('chat_id', chatId);
-          formData.append('media', JSON.stringify(mediaGroup));
+          formData.append('media', JSON.stringify(media));
           
-          files.forEach((file, index) => {
-            formData.append(`photo_${index}`, file);
+          files.forEach((file, i) => {
+            formData.append(`photo${i}`, file);
           });
 
           await fetch(`https://api.telegram.org/bot${botToken}/sendMediaGroup`, {
@@ -169,12 +205,10 @@
             body: formData
           });
         } else {
-          // Если нет фото - отправляем только текст
+          // Send only text if no photos
           await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               chat_id: chatId,
               text: text,
@@ -183,13 +217,13 @@
           });
         }
 
-        // Показываем сообщение об успехе
+        // Show success message
         document.getElementById('car-form').style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';
         
       } catch (error) {
-        console.error('Błąd wysyłania:', error);
-        alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.');
+        console.error('Error:', error);
+        alert('Wystąpił błąd podczas wysyłania. Spróbuj ponownie.');
       }
     });
   </script>
