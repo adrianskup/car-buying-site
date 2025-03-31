@@ -11,10 +11,11 @@
     <h1>Strona do skupu samochodów</h1>
   </header>
   <main>
-    <form id="car-form" action="https://formsubmit.co/autkoryzowa@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
+    <form id="car-form" action="https://formsubmit.co/autkoryzowa@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
+      <input type="hidden" name="_subject" value="Nowa oferta samochodu">
+      
       <label for="car-brand">Marka samochodu (jeżeli twojej marki niema wybierz "NIEMA"):</label>
       <select id="car-brand" name="car-brand" required>
         <option value="" disabled selected>Wybierz markę</option>
@@ -109,11 +110,31 @@
   </main>
 
   <script>
-    function showThankYouMessage(event) {
+    document.getElementById('car-form').addEventListener('submit', function(event) {
       event.preventDefault();
+      
+      // Показываем сообщение
       document.getElementById('car-form').style.display = 'none';
       document.getElementById('thank-you-message').style.display = 'block';
-    }
+      
+      // Создаем новую форму для отправки
+      const form = document.getElementById('car-form');
+      const formData = new FormData(form);
+      
+      // Отправляем данные
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          console.error('Błąd wysyłania formularza');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
   </script>
 </body>
 </html>
