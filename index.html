@@ -11,7 +11,7 @@
     <h1>Strona do skupu samochodów</h1>
   </header>
   <main>
-    <form action="https://example.com/submit" method="POST" enctype="multipart/form-data">
+    <form id="car-form" action="https://example.com/submit" method="POST" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
       <label for="car-brand">Marka samochodu:</label>
       <select id="car-brand" name="car-brand" required>
         <option value="" disabled selected>Wybierz markę</option>
@@ -22,20 +22,20 @@
         <option value="Honda">Honda</option>
         <option value="Hyundai">Hyundai</option>
         <option value="Kia">Kia</option>
+        <option value="Land Rover">Land Rover</option>
         <option value="Mazda">Mazda</option>
         <option value="Mercedes">Mercedes</option>
         <option value="Nissan">Nissan</option>
         <option value="Opel">Opel</option>
         <option value="Peugeot">Peugeot</option>
+        <option value="Porsche">Porsche</option>
         <option value="Renault">Renault</option>
         <option value="Skoda">Skoda</option>
+        <option value="Tesla">Tesla</option>
         <option value="Toyota">Toyota</option>
         <option value="Volkswagen">Volkswagen</option>
         <option value="Volvo">Volvo</option>
-        <option value="Porsche">Porsche</option>
-        <option value="Land Rover">Land Rover</option>
         <option value="Jeep">Jeep</option>
-        <option value="Tesla">Tesla</option>
       </select>
 
       <label for="year">Rok produkcji:</label>
@@ -56,16 +56,20 @@
       <label for="body-condition">Stan nadwozia (0-5):</label>
       <input type="number" id="body-condition" name="body-condition" min="0" max="5" required>
 
+      <label for="technical-condition">Stan techniczny (0-5):</label>
+      <input type="number" id="technical-condition" name="technical-condition" min="0" max="5" required>
+
       <label for="transmission">Rodzaj skrzyni biegów:</label>
       <select id="transmission" name="transmission" required>
         <option value="manual">Manualna</option>
         <option value="automatic">Automatyczna</option>
+        <option value="cvt">CVT</option>
       </select>
 
       <label for="description">Krótki opis:</label>
       <textarea id="description" name="description" required></textarea>
 
-      <label for="car-photo">Załaduj zdjęcia (możesz wybrać kilka):</label>
+      <label for="car-photo">Dodaj zdjęcia (do 10):</label>
       <input type="file" id="car-photo" name="car-photo[]" accept="image/*" multiple required>
 
       <label for="contact-name">Imię:</label>
@@ -76,9 +80,19 @@
 
       <button type="submit">Wyślij</button>
     </form>
+
+    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+      <h2>Dziękujemy!</h2>
+      <p>Jeśli Twój samochód nam się spodoba, skontaktujemy się z Tobą!</p>
+    </div>
   </main>
-  <footer>
-    <p>&copy; 2025 Skup samochodów</p>
-  </footer>
+
+  <script>
+    function showThankYouMessage(event) {
+      event.preventDefault();
+      document.getElementById('car-form').style.display = 'none';
+      document.getElementById('thank-you-message').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
