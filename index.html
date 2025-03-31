@@ -12,7 +12,7 @@
   </header>
   <main>
     <form id="car-form" action="https://example.com/submit" method="POST" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
-      <label for="car-brand">Marka samochodu(jeżeli twojej marki niema wybierz "NIEMA"):</label>
+      <label for="car-brand">Marka samochodu (jeżeli twojej marki niema wybierz "NIEMA"):</label>
       <select id="car-brand" name="car-brand" required>
         <option value="" disabled selected>Wybierz markę</option>
         <option value="Alfa Romeo">Alfa Romeo</option>
@@ -51,7 +51,7 @@
       </select>
 
       <label for="car-model">Model samochodu:</label>
-      <input type="text" id="car-model" name="car-model" placeholder="Wpisz model samochodu" required>
+      <input type="text" id="car-model" name="car-model" required>
 
       <label for="year">Rok produkcji:</label>
       <input type="number" id="year" name="year" required>
@@ -82,13 +82,13 @@
       </select>
 
       <label for="description">Krótki opis:</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" placeholder="Napisz krótki opis samochódu np. co do zrobienia, szczegóły stanu, dod. elementy" required></textarea>
 
       <label for="car-photo">Dodaj zdjęcia (do 10):</label>
       <input type="file" id="car-photo" name="car-photo[]" accept="image/*" multiple required>
 
       <label for="price">Cena:</label>
-      <input type="number" id="price" name="price" placeholder="Wpisz cenę" required>
+      <input type="number" id="price" name="price" required>
 
       <label for="contact-name">Imię:</label>
       <input type="text" id="contact-name" name="contact-name" required>
